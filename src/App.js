@@ -1,18 +1,26 @@
 import './App.module.css';
 import styles from './App.module.css';
 import FileSelector from "./FileSelector";
-import Results from "./Results";
+import Result from "./Result";
+import {useState} from "react";
 
 function App() {
-  return (
-    <div className={styles.mainContainer}>
-        <div className={styles.bodyContainer}>
-            <h1 className={styles.headingSelectFile}>Please select file:</h1>
-            <FileSelector/>
-            <Results/>
+    const [maxDaysData, displayMaxDaysData] = useState(null);
+
+    const updateDays = (data) => {
+        displayMaxDaysData(data);
+    }
+
+    return (
+        <div className={styles.mainContainer}>
+            <div className={styles.bodyContainer}>
+                <h1 className={styles.headingSelectFile}>Please select file:</h1>
+                <FileSelector onChange={updateDays} />
+                {maxDaysData && <Result dataToDisplay={maxDaysData}/>}
+
+            </div>
         </div>
-    </div>
-  );
+    );
 }
 
 export default App;
