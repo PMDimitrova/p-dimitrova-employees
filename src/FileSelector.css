@@ -1,12 +1,25 @@
-.formWrapper{
+form{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
+    margin-top: 14px;
 }
 .caption{
     font-size: 18px;
     margin: 30px 20px 30px 20px;
 }
+
+.inputBox{
+    border: 2px solid #898989;
+    border-radius: 2px;
+    background-color: #ececec;
+    margin-right: 8px;
+}
 .proceedBtn{
     align-self: flex-end;
+}
+button{
+    border: 2px solid #898989;
+    border-radius: 2px;
+    background-color: #ececec;
 }

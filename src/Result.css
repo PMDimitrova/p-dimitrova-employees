@@ -1,0 +1,33 @@
+
+.resultWrapper{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.resultHeader{
+    align-self: center;
+    margin: 50px 0 20px 0;
+    text-shadow: 1px 2px 1px ghostwhite;
+}
+table{
+    border: 1px solid #838383;
+    border-radius: 5px;
+}
+thead {
+    background-color: #ececec;
+
+}
+tbody{
+    background-color: #f8f8f8;
+}
+
+th, td{
+    width: 160px;
+    padding-left: 6px;
+}
+.lineRight{
+    border-right: 1px solid #838383;
+}

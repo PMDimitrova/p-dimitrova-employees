@@ -10,6 +10,7 @@
   width: 70%;
   height: 70vh;
   background-color: lightgray;
+  margin-top: 30px;
   align-self: center;
   box-shadow: 6px 5px 12px 5px #A6A6A6;
   display: flex;
@@ -19,4 +20,5 @@
 .headingSelectFile{
   color: #838383;
   margin-top: 50px;
+  text-shadow: 1px 2px 1px ghostwhite;
 }

@@ -28,10 +28,7 @@ export default function FileSelector(props) {
         */
         let projectsLibrary = {};
 
-        console.log(input);
-
         input.map(line => {
-            // console.log(line);
             let currentProjId = `project${line.ProjectID}`;
             if (projectsLibrary[currentProjId] === undefined){ //on first meet with this project id
                 projectsLibrary[currentProjId] = [0];
@@ -45,8 +42,6 @@ export default function FileSelector(props) {
             projectsLibrary[currentProjId].push(currentEmployee);
         })
 
-        console.log(projectsLibrary);
-
         let maxDaysWorked = {
             days: 0,
             projectName: '',
@@ -55,7 +50,6 @@ export default function FileSelector(props) {
         };
 
         for (const [key, value] of Object.entries(projectsLibrary)){
-            console.log(projectsLibrary[key])
             //if (days worked on project are more than the current max && there's more than one employee who has worked on the project
             if (maxDaysWorked.days < projectsLibrary[key][0] && projectsLibrary[key].length > 2){
                 maxDaysWorked.days = projectsLibrary[key][0];
@@ -64,7 +58,6 @@ export default function FileSelector(props) {
                 maxDaysWorked.empl2 = projectsLibrary[key][2];
             }
         }
-        console.log(maxDaysWorked);
 
         props.onChange(maxDaysWorked);
     }
@@ -75,7 +68,7 @@ export default function FileSelector(props) {
 
         reader.onload = function (e) {
             const text = e.target.result;
-            console.log(text);
+
             processCSV(text);
         }
 
@@ -83,11 +76,12 @@ export default function FileSelector(props) {
     }
 
     return (
-        <form id='csv-form'>
+        <form id='csv-form' >
             <input
                 type='file'
                 accept='.csv'
                 id='csvFile'
+                className='inputBox'
                 onChange={(e) => {
                     setCsvFile(e.target.files[0]);
                 }}
